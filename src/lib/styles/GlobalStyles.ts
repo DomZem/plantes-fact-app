@@ -16,7 +16,8 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
   body {
     font-size: 1.1rem;
     font-family: ${({ theme }) => theme.fonts.spartan};
-     
+    color: ${({ theme }) => theme.colors.white};
+    
     @media (min-width: 1024px) {
       font-size: 1.4rem;
     }
@@ -35,6 +36,7 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
   }
 
   a {
+    color: ${({ theme }) => theme.colors.white};
     text-decoration: none;
   }
 `;
