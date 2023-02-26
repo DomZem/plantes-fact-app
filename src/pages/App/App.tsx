@@ -1,23 +1,24 @@
 import Header from 'components/organisms/Header/Header';
 import { GlobalStyle } from 'lib/styles/GlobalStyles';
 import { theme } from 'lib/styles/theme';
-import styled, { ThemeProvider } from 'styled-components';
+import Planet from 'pages/Planet/Planet';
+import { Route, Routes } from 'react-router';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import { Wrapper } from './App.styles';
 
 const App = () => (
-	<ThemeProvider theme={theme}>
-		<GlobalStyle />
-		<Wrapper>
-			<Header />
-		</Wrapper>
-	</ThemeProvider>
+	<BrowserRouter>
+		<ThemeProvider theme={theme}>
+			<GlobalStyle />
+			<Wrapper>
+				<Header />
+				<Routes>
+					<Route path='/:planetName' element={<Planet />} />
+				</Routes>
+			</Wrapper>
+		</ThemeProvider>
+	</BrowserRouter>
 );
-
-export const Wrapper = styled.div`
-	width: 100%;
-	min-height: 100vh;
-
-	background-color: ${({ theme }) => theme.colors.darkBlue};
-	background-image: url('images/background-stars.svg');
-`;
 
 export default App;
