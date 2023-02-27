@@ -9,14 +9,14 @@ export const MenuToggleButton = styled.button`
 
 export const Wrapper = styled.nav`
 	position: fixed;
-	top: 80px;
+	top: 70px;
 	bottom: 0;
 	left: 0;
 	right: 20%;
 
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: flex-start;
 
 	padding: 1.5rem;
@@ -31,12 +31,11 @@ export const Wrapper = styled.nav`
 
 export const PlanetLink = styled(NavLink)`
 	width: 100%;
+	flex: 1;
 
 	display: flex;
 	align-items: center;
 	gap: 2rem;
-
-	padding: 2.2rem 0;
 
 	svg {
 		width: 1.5rem;
