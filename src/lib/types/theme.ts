@@ -4,14 +4,14 @@ export type themeType = {
 		darkBlue: string;
 		darkGrey: string;
 		grey: string;
-		darkTurquoise: string;
-		sandyBrown: string;
-		blueViolet: string;
-		coral: string;
-		orangeTomato: string;
-		darkOrange: string;
-		mediumSpringGreen: string;
-		dodgerBlue: string;
+		mercury: string;
+		venus: string;
+		earth: string;
+		mars: string;
+		jupiter: string;
+		saturn: string;
+		uranus: string;
+		neptune: string;
 	};
 	fonts: {
 		antonio: string;

@@ -16,12 +16,31 @@ const Planet = () => {
 			.then(({ data }) => setPlanet(data.planet));
 	}, [planetName]);
 
-	return <Wrapper>Witaj znajdujesz się na planecie {`${planetName}`}</Wrapper>;
+	return (
+		<Wrapper>
+			{planet && (
+				<>
+					<PlanetContent>
+						{/* <PlanetImage src={planet.images.planet} /> */}
+						<PlanetDescription>{/* <h2>Welcome to {planet.name}</h2> */}</PlanetDescription>
+					</PlanetContent>
+					<PlanetStatistics></PlanetStatistics>
+				</>
+			)}
+		</Wrapper>
+	);
 };
 
 export const Wrapper = styled.div`
 	max-width: 1110px;
-	margin: 0 auto;
+	width: 100%;
 `;
 
+export const PlanetContent = styled.div``;
+
+export const PlanetImage = styled.img``;
+
+export const PlanetDescription = styled.div``;
+
+export const PlanetStatistics = styled.div``;
 export default Planet;
