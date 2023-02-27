@@ -1,4 +1,11 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+
+export const MenuToggleButton = styled.button`
+	background-color: transparent;
+	border: none;
+	padding: 0.5rem;
+`;
 
 export const Wrapper = styled.nav`
 	position: fixed;
@@ -8,45 +15,28 @@ export const Wrapper = styled.nav`
 	right: 20%;
 
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 
 	padding: 1.5rem;
 
 	border-right: 1px solid rgba(151, 151, 151, 0.35);
-
 	z-index: 900;
-`;
 
-export const LinksList = styled.ul`
-	width: 100%;
-	height: 100%;
-
-	display: flex;
-	align-items: flex-start;
-	justify-content: space-between;
-	flex-direction: column;
-
-	li + li {
+	a + a {
 		border-top: 1px solid rgba(151, 151, 151, 0.35);
 	}
 `;
 
-export const LinksListItem = styled.li`
-	height: 100%;
+export const PlanetLink = styled(NavLink)`
 	width: 100%;
 
 	display: flex;
 	align-items: center;
 	gap: 2rem;
 
-	a {
-		font-weight: bold;
-		font-size: 1.5rem;
-
-		text-transform: uppercase;
-		letter-spacing: 2px;
-	}
+	padding: 2.2rem 0;
 
 	svg {
 		width: 1.5rem;
@@ -56,6 +46,14 @@ export const LinksListItem = styled.li`
 
 		fill: ${({ theme }) => theme.colors.white};
 	}
+`;
+
+export const PlanetName = styled.p`
+	font-weight: bold;
+	font-size: 1.5rem;
+
+	text-transform: uppercase;
+	letter-spacing: 2px;
 `;
 
 export const PlanetIcon = styled.div<{ name: string }>`

@@ -1,19 +1,36 @@
 import { ReactComponent as RightArrowIcon } from 'lib/icons/arrow-right.svg';
+import { ReactComponent as HamburgerIcon } from 'lib/icons/icon-hamburger.svg';
 import { planets } from 'mocks/fixtures';
-import { NavLink } from 'react-router-dom';
-import { LinksList, LinksListItem, PlanetIcon, Wrapper } from './MobileNavigation.styles';
-const MobileNavigation = () => (
-	<Wrapper>
-		<LinksList>
-			{planets.map((planet) => (
-				<LinksListItem key={planet.name}>
-					<PlanetIcon name={planet.name.toLowerCase()} />
-					<NavLink to={`/${planet.name.toLowerCase()}`}>{planet.name}</NavLink>
-					<RightArrowIcon />
-				</LinksListItem>
-			))}
-		</LinksList>
-	</Wrapper>
-);
+import { useState } from 'react';
+import { MenuToggleButton, PlanetIcon, PlanetLink, PlanetName, Wrapper } from './MobileNavigation.styles';
+
+const MobileNavigation = () => {
+	const [showMenu, setShowMenu] = useState(false);
+
+	let menu;
+
+	if (showMenu) {
+		menu = (
+			<Wrapper>
+				{planets.map(({ name }) => (
+					<PlanetLink key={name} to={`/${name.toLowerCase()}`}>
+						<PlanetIcon name={name.toLocaleLowerCase()} />
+						<PlanetName>{name}</PlanetName>
+						<RightArrowIcon />
+					</PlanetLink>
+				))}
+			</Wrapper>
+		);
+	}
+
+	return (
+		<>
+			<MenuToggleButton onClick={() => setShowMenu(!showMenu)}>
+				<HamburgerIcon />
+			</MenuToggleButton>
+			{menu}
+		</>
+	);
+};
 
 export default MobileNavigation;

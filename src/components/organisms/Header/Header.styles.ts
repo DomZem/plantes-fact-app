@@ -10,7 +10,7 @@ export const Wrapper = styled.header`
 	justify-content: space-between;
 	align-items: center;
 
-	padding: 0 3rem;
+	padding: 0 2rem;
 	border-bottom: 1px solid rgba(151, 151, 151, 0.35);
 
 	background-color: transparent;
