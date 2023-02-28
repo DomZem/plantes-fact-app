@@ -2,7 +2,7 @@ import axios from 'axios';
 import { planetType } from 'lib/types/planet';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import styled from 'styled-components';
+import { StyledDescription, StyledImage, StyledStatistics, Wrapper } from './Planet.styles';
 
 const Planet = () => {
 	const { planetName } = useParams();
@@ -20,27 +20,39 @@ const Planet = () => {
 		<Wrapper>
 			{planet && (
 				<>
-					<PlanetContent>
-						{/* <PlanetImage src={planet.images.planet} /> */}
-						<PlanetDescription>{/* <h2>Welcome to {planet.name}</h2> */}</PlanetDescription>
-					</PlanetContent>
-					<PlanetStatistics></PlanetStatistics>
+					<StyledImage src={planet.images.planet} alt={planet.name}></StyledImage>
+					<StyledDescription>
+						<h2>{planet.name}</h2>
+						<p>{planet.overview.content}</p>
+						<p>
+							Source:
+							<a href={planet.overview.source} target='_blank' rel='noreferrer'>
+								Wikipedia
+							</a>
+						</p>
+					</StyledDescription>
+					<StyledStatistics>
+						<div>
+							<p>rotation time</p>
+							<p>{planet.rotation}</p>
+						</div>
+						<div>
+							<p>revolution time</p>
+							<p>{planet.revolution}</p>
+						</div>
+						<div>
+							<p>radius</p>
+							<p>{planet.radius}</p>
+						</div>
+						<div>
+							<p>average temp</p>
+							<p>{planet.temperature}</p>
+						</div>
+					</StyledStatistics>
 				</>
 			)}
 		</Wrapper>
 	);
 };
 
-export const Wrapper = styled.div`
-	max-width: 1110px;
-	width: 100%;
-`;
-
-export const PlanetContent = styled.div``;
-
-export const PlanetImage = styled.img``;
-
-export const PlanetDescription = styled.div``;
-
-export const PlanetStatistics = styled.div``;
 export default Planet;

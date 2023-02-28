@@ -1,16 +1,19 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-	width: 100%;
-	min-height: 100vh;
-
-	background-color: ${({ theme }) => theme.colors.darkBlue};
-	background-image: url('images/background-stars.svg');
-`;
-
 export const Main = styled.main`
-	padding-top: 80px; // The same height as header
+	padding: 1.5rem;
+	padding-top: 7rem; // The same value as header height
+
+	min-height: 100vh;
 
 	display: flex;
 	justify-content: center;
+
+	@media (min-width: 768px) {
+		padding-top: 16rem;
+	}
+
+	@media (min-width: 1024px) {
+		padding-top: 8.5rem;
+	}
 `;

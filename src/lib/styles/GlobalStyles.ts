@@ -14,12 +14,16 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
   }
 
   body {
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     font-family: ${({ theme }) => theme.fonts.spartan};
+    
+    background-color: ${({ theme }) => theme.colors.darkBlue};
+	  background-image: url('assets/background-stars.svg');
+    
     color: ${({ theme }) => theme.colors.white};
     
-    @media (min-width: 1024px) {
-      font-size: 1.4rem;
+    @media (min-width: 768px) {
+      font-size: 1.6rem;
     }
   }
 

@@ -8,7 +8,7 @@ export const Wrapper = styled.nav`
 	gap: 1.5rem;
 `;
 
-export const PlanetLink = styled(NavLink)<{ name: string }>`
+export const StyledLink = styled(NavLink)<{ name: string }>`
 	position: relative;
 
 	display: flex;
@@ -27,7 +27,7 @@ export const PlanetLink = styled(NavLink)<{ name: string }>`
 			content: '';
 
 			bottom: 0;
-			width: 0%;
+			width: 0;
 			height: 3px;
 
 			background-color: ${({ theme, name }) => theme.colors[name]};

@@ -4,7 +4,7 @@ export const Wrapper = styled.header`
 	position: fixed;
 	top: 0;
 	width: 100%;
-	height: 70px;
+	height: 7rem;
 
 	display: flex;
 	justify-content: space-between;
@@ -18,7 +18,7 @@ export const Wrapper = styled.header`
 	z-index: 900;
 
 	@media (min-width: 768px) {
-		height: 160px;
+		height: 16rem;
 
 		flex-direction: column;
 		justify-content: space-around;
@@ -29,7 +29,7 @@ export const Wrapper = styled.header`
 	}
 
 	@media (min-width: 1024px) {
-		height: 85px;
+		height: 8.5rem;
 
 		flex-direction: row;
 		justify-content: space-between;
@@ -48,7 +48,7 @@ export const Wrapper = styled.header`
 	}
 `;
 
-export const Title = styled.h1`
+export const StyledTitle = styled.h1`
 	font-size: 2.8rem;
 	text-transform: uppercase;
 `;
