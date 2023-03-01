@@ -7,11 +7,14 @@ import { StyledIcon, StyledLink, StyledName, Wrapper } from './MobileNavigation.
 const MobileNavigation = () => {
 	const [showMenu, setShowMenu] = useState(false);
 
-	let menu;
+	const handleToggleMenu = () => {
+		setShowMenu(!showMenu);
+	};
 
-	if (showMenu) {
-		menu = (
-			<Wrapper>
+	return (
+		<>
+			<ToggleButton isOpen={showMenu} onHandleToggle={handleToggleMenu} />
+			<Wrapper isOpen={showMenu}>
 				{planets.map(({ name }) => {
 					return (
 						<StyledLink key={name} to={`/${name.toLowerCase()}`}>
@@ -22,13 +25,6 @@ const MobileNavigation = () => {
 					);
 				})}
 			</Wrapper>
-		);
-	}
-
-	return (
-		<>
-			<ToggleButton onClick={() => setShowMenu(!showMenu)} />
-			{menu}
 		</>
 	);
 };

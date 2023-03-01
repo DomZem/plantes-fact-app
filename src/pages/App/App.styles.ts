@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-	padding: 1.5rem;
 	padding-top: 7rem; // The same value as header height
 
 	min-height: 100vh;

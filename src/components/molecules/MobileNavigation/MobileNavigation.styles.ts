@@ -1,16 +1,15 @@
 import { NavLink } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
+import styled, { css } from 'styled-components';
 
-const fadeIn = keyframes`
-  from {
-		transform: translateX(-100%);
-  }
-  to {
-		transform: translateX(0);
-  }
+const openNav = css`
+	transform: translateX(0);
 `;
 
-export const Wrapper = styled.nav`
+const closeNav = css`
+	transform: translateX(-100%);
+`;
+
+export const Wrapper = styled.nav<{ isOpen: boolean }>`
 	position: fixed;
 	top: 7rem;
 	bottom: 0;
@@ -23,10 +22,12 @@ export const Wrapper = styled.nav`
 	align-items: flex-start;
 	padding: 1.5rem;
 
+	transition: transform 0.3s ease-in-out;
+	${({ isOpen }) => (isOpen ? openNav : closeNav)}
+
 	background-color: ${({ theme }) => theme.colors.darkBlue};
 
 	z-index: 900;
-	animation: ${fadeIn} 0.2s linear;
 `;
 
 export const StyledName = styled.p`

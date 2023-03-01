@@ -21,4 +21,5 @@ export type planetType = {
 		internal: string;
 		geology: string;
 	};
+	[key: string]: any;
 };

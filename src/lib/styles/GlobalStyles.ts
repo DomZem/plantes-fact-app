@@ -16,7 +16,7 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
   body {
     font-size: 1.4rem;
     font-family: ${({ theme }) => theme.fonts.spartan};
-    
+   
     background-color: ${({ theme }) => theme.colors.darkBlue};
 	  background-image: url('assets/background-stars.svg');
     

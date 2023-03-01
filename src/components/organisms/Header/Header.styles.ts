@@ -13,7 +13,7 @@ export const Wrapper = styled.header`
 	padding: 1.5rem;
 	border-bottom: 1px solid rgba(151, 151, 151, 0.35);
 
-	background-color: transparent;
+	background-color: ${({ theme }) => theme.colors.darkBlue};
 
 	z-index: 900;
 

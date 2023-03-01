@@ -1,28 +1,17 @@
-import styled from 'styled-components';
+import { FC } from 'react';
+import { StyledLine, Wrapper } from './ToggleButton.styles';
 
-const ToggleButton = (props: any) => (
-	<Wrapper {...props}>
+type ToggleButtonProps = {
+	isOpen: boolean;
+	onHandleToggle(): void;
+};
+
+const ToggleButton: FC<ToggleButtonProps> = ({ isOpen, onHandleToggle }) => (
+	<Wrapper isOpen={isOpen} onClick={onHandleToggle}>
 		<StyledLine />
 		<StyledLine />
 		<StyledLine />
 	</Wrapper>
 );
-
-export const Wrapper = styled.button`
-	border: none;
-	background-color: transparent;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	gap: 0.4rem;
-	padding: 0.5rem;
-`;
-
-export const StyledLine = styled.div`
-	height: 0.3rem;
-	width: 2.4rem;
-	background-color: ${({ theme }) => theme.colors.white};
-`;
 
 export default ToggleButton;
