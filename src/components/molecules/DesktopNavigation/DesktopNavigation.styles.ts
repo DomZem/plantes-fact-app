@@ -15,17 +15,17 @@ export const StyledLink = styled(NavLink)<{ name: string }>`
 	align-items: center;
 
 	font-weight: bold;
-	text-transform: uppercase;
 	letter-spacing: 1px;
+	text-transform: uppercase;
 
 	@media (min-width: 1024px) {
 		opacity: 0.75;
 		transition: opacity 0.2s ease-in;
 
 		&::before {
-			position: absolute;
 			content: '';
 
+			position: absolute;
 			bottom: 0;
 			width: 0;
 			height: 3px;

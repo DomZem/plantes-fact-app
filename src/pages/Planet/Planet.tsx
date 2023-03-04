@@ -1,14 +1,14 @@
 import axios from 'axios';
-import StatisticBox from 'components/atoms/StatisticBox/StatisticBox';
+import PlanetDescription from 'components/molecules/PlanetDescription/PlanetDescription';
+import PlanetStatisticsList from 'components/molecules/PlanetStatisticsList/PlanetStatisticsList';
 import { planetType } from 'lib/types/planet';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
-import { StyledContent, StyledDescription, StyledImage, StyledSource, StyledStatistics, StyledSwitch, StyledSwitchWrapper, StyledTitle, Wrapper } from './Planet.styles';
+import { StyledImage, StyledMobileSwitchButton, StyledMobileSwitchWrapper, Wrapper } from './Planet.styles';
 
 const Planet = () => {
 	const { planetName } = useParams();
 	const [planet, setPlanet] = useState<planetType>();
-	const [planetContent, setPlanetContent] = useState('overview');
 
 	useEffect(() => {
 		axios
@@ -18,43 +18,24 @@ const Planet = () => {
 			.then(({ data }) => setPlanet(data.planet));
 	}, [planetName]);
 
-	const handleSwitchContent = (e: React.MouseEvent<HTMLButtonElement>) => {
-		const value = e.currentTarget.id;
-		setPlanetContent(value);
-	};
-
 	return (
 		<Wrapper>
 			{planet && (
 				<>
-					<StyledSwitchWrapper>
-						<StyledSwitch id='overview' onClick={handleSwitchContent}>
+					<StyledMobileSwitchWrapper>
+						<StyledMobileSwitchButton as='button' name={planet.name}>
+							content
+						</StyledMobileSwitchButton>
+						<StyledMobileSwitchButton as='button' name={planet.name}>
 							overview
-						</StyledSwitch>
-						<StyledSwitch id='structure' onClick={handleSwitchContent}>
+						</StyledMobileSwitchButton>
+						<StyledMobileSwitchButton as='button' name={planet.name}>
 							structure
-						</StyledSwitch>
-						<StyledSwitch id='geology' onClick={handleSwitchContent}>
-							surface
-						</StyledSwitch>
-					</StyledSwitchWrapper>
-					<StyledImage src={planet.images.planet} alt={planet.name}></StyledImage>
-					<StyledDescription>
-						<StyledTitle>{planet.name}</StyledTitle>
-						<StyledContent>{planet[planetContent].content}</StyledContent>
-						<StyledSource>
-							Source:
-							<a href={planet.overview.source} target='_blank' rel='noreferrer'>
-								Wikipedia
-							</a>
-						</StyledSource>
-					</StyledDescription>
-					<StyledStatistics>
-						<StatisticBox title='rotation time' value={planet.rotation} />
-						<StatisticBox title='revolution time' value={planet.revolution} />
-						<StatisticBox title='radius' value={planet.radius} />
-						<StatisticBox title='average temp' value={planet.temperature} />
-					</StyledStatistics>
+						</StyledMobileSwitchButton>
+					</StyledMobileSwitchWrapper>
+					<StyledImage id={planet.name} src={planet.images.planet} alt={planet.name} />
+					<PlanetDescription title={planet.name} content={planet['structure'].content} handleHref={planet['overview'].source} handleSourceName='Wikipedia' />
+					<PlanetStatisticsList statistics={planet.statistics} />
 				</>
 			)}
 		</Wrapper>

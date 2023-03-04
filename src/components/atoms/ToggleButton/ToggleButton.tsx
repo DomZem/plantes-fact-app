@@ -3,11 +3,11 @@ import { StyledLine, Wrapper } from './ToggleButton.styles';
 
 type ToggleButtonProps = {
 	isOpen: boolean;
-	onHandleToggle(): void;
+	handleToggle(): void;
 };
 
-const ToggleButton: FC<ToggleButtonProps> = ({ isOpen, onHandleToggle }) => (
-	<Wrapper isOpen={isOpen} onClick={onHandleToggle}>
+const ToggleButton: FC<ToggleButtonProps> = ({ isOpen, handleToggle }) => (
+	<Wrapper isOpen={isOpen} onClick={handleToggle}>
 		<StyledLine />
 		<StyledLine />
 		<StyledLine />

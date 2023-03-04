@@ -2,10 +2,11 @@ import { themeType } from 'lib/types/theme';
 
 export const theme: themeType = {
 	colors: {
+		background: '#070724',
+		border: 'rgba(151, 151, 151, 0.35)',
 		white: '#FFFFFF',
-		darkBlue: '#070724',
+		paragraph: '#838391',
 		darkGrey: '#38384F',
-		grey: '#838391',
 		mercury: '#419EBB',
 		venus: '#EDA249',
 		earth: '#6F2ED6',
@@ -18,5 +19,17 @@ export const theme: themeType = {
 	fonts: {
 		spartan: 'League Spartan, sans-serif;',
 		antonio: 'Antonio, sans-serif',
+	},
+	planetsMaxWidth: {
+		mobile: {
+			mercury: '32%',
+			venus: '45%',
+			earth: '50%',
+			mars: '37%',
+			jupiter: '65%',
+			saturn: '74%',
+			uranus: '51%',
+			neptune: '50%',
+		},
 	},
 };

@@ -1,66 +1,53 @@
+import { BorderBottomHover } from 'components/atoms/BorderBottomHover/BorderBottomHover';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
 	max-width: 1110px;
 
+	padding-top: 5.5rem; // The same value as StyledMobileSwitchWrapper height
+
 	display: grid;
-	grid-template-rows: auto 30% 30% 1fr;
-	align-items: center;
+	grid-template-columns: 1fr;
+	grid-template-rows:
+		minmax(auto, calc(45vh - 7.25rem))
+		minmax(auto, calc(55vh - 7.25rem)); // (Height of Header + height of StyledMobileSwitchWrapper + gap) / 2
 	gap: 2rem;
 `;
+export const StyledMobileSwitchWrapper = styled.div`
+	position: fixed;
+	top: 7rem; // The same value as height of Header
+	height: 5.5rem;
+	width: 100%;
 
-export const StyledSwitchWrapper = styled.div`
 	display: flex;
 	justify-content: space-between;
-
-	border-bottom: 1px solid rgba(151, 151, 151, 0.35);
-	padding: 0 1.5rem;
-`;
-
-export const StyledSwitch = styled.button`
-	text-transform: uppercase;
-	font-size: 1.2rem;
-	padding: 1.2em 0;
-	font-family: ${({ theme }) => theme.fonts.spartan};
-	letter-spacing: 1px;
-	font-weight: bold;
-	color: ${({ theme }) => theme.colors.white};
-	background-color: transparent;
-	border: none;
-`;
-
-export const StyledImage = styled.img`
-	align-self: center;
-	justify-self: center;
-	max-width: 30%;
-`;
-
-export const StyledDescription = styled.div`
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-
-	padding: 0 1.5rem;
-
-	text-align: center;
-`;
-
-export const StyledTitle = styled.h2`
-	font-size: 4rem;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-`;
-
-export const StyledContent = styled.p`
-	line-height: 1.6;
-`;
-
-export const StyledSource = styled.p``;
-
-export const StyledStatistics = styled.div`
-	display: flex;
-	flex-direction: column;
 	gap: 1rem;
 
 	padding: 0 1.5rem;
+	border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+
+	background-color: ${({ theme }) => theme.colors.background};
+
+	z-index: 800;
+`;
+
+export const StyledMobileSwitchButton = styled(BorderBottomHover)<{ name: string }>`
+	padding: 0.75em 0;
+	border: none;
+	background-color: transparent;
+
+	font-size: 1.3rem;
+	font-weight: bold;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+`;
+
+export const StyledImage = styled.img<{ id: string }>`
+	max-width: ${({ theme, id }) => theme.planetsMaxWidth.mobile[id.toLowerCase()]};
+	// Every planet have different max-width because that mirrors its size in the solar system
+
+	padding: 2rem;
+
+	align-self: center;
+	justify-self: center;
 `;

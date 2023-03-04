@@ -11,7 +11,7 @@ const closeNav = css`
 
 export const Wrapper = styled.nav<{ isOpen: boolean }>`
 	position: fixed;
-	top: 7rem;
+	top: 7rem; // The same value as header height
 	bottom: 0;
 	left: 0;
 	right: 0;
@@ -20,14 +20,16 @@ export const Wrapper = styled.nav<{ isOpen: boolean }>`
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: flex-start;
+
 	padding: 1.5rem;
 
-	transition: transform 0.3s ease-in-out;
-	${({ isOpen }) => (isOpen ? openNav : closeNav)}
-
-	background-color: ${({ theme }) => theme.colors.darkBlue};
-
+	background-color: ${({ theme }) => theme.colors.background};
 	z-index: 900;
+
+	transition-property: display, transform;
+	transition-duration: 300ms;
+	transition-timing-function: ease-in-out;
+	${({ isOpen }) => (isOpen ? openNav : closeNav)}
 `;
 
 export const StyledName = styled.p`
@@ -38,7 +40,6 @@ export const StyledName = styled.p`
 	letter-spacing: 2px;
 
 	color: ${({ theme }) => theme.colors.white};
-
 	opacity: 0.5;
 `;
 
@@ -60,7 +61,7 @@ export const StyledLink = styled(NavLink)`
 	gap: 2rem;
 
 	& + & {
-		border-top: 1px solid rgba(151, 151, 151, 0.35);
+		border-top: 1px solid ${({ theme }) => theme.colors.border};
 	}
 
 	svg {

@@ -12,14 +12,13 @@ export type planetType = {
 		content: string;
 		source: string;
 	};
-	rotation: string;
-	revolution: string;
-	radius: string;
-	temperature: string;
+	statistics: {
+		title: string;
+		value: string;
+	}[];
 	images: {
 		planet: string;
 		internal: string;
 		geology: string;
 	};
-	[key: string]: any;
 };

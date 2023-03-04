@@ -11,9 +11,9 @@ export const Wrapper = styled.header`
 	align-items: center;
 
 	padding: 1.5rem;
-	border-bottom: 1px solid rgba(151, 151, 151, 0.35);
+	border-bottom: 1px solid ${({ theme }) => theme.colors.border};
 
-	background-color: ${({ theme }) => theme.colors.darkBlue};
+	background-color: ${({ theme }) => theme.colors.background};
 
 	z-index: 900;
 
@@ -51,4 +51,5 @@ export const Wrapper = styled.header`
 export const StyledTitle = styled.h1`
 	font-size: 2.8rem;
 	text-transform: uppercase;
+	letter-spacing: 1px;
 `;

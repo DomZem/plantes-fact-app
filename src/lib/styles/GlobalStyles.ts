@@ -14,25 +14,26 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
   }
 
   body {
-    font-size: 1.4rem;
-    font-family: ${({ theme }) => theme.fonts.spartan};
-   
-    background-color: ${({ theme }) => theme.colors.darkBlue};
 	  background-image: url('assets/background-stars.svg');
+    background-color: ${({ theme }) => theme.colors.background};
     
-    color: ${({ theme }) => theme.colors.white};
-    
-    @media (min-width: 768px) {
-      font-size: 1.6rem;
-    }
-  }
-
-  h1, h2 {
-    font-family: ${({ theme }) => theme.fonts.antonio};
-  }
-
-  h3, h4 {
+    font-size: 1.6rem;
     font-family: ${({ theme }) => theme.fonts.spartan};
+    color: ${({ theme }) => theme.colors.paragraph};
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: ${({ theme }) => theme.fonts.antonio};
+    color: ${({ theme }) => theme.colors.white};
+  }
+
+  button {
+    font-family: ${({ theme }) => theme.fonts.spartan};
+    color: ${({ theme }) => theme.colors.paragraph};
+  }
+
+  p {
+    line-height: 1.6;
   }
 
   li {
@@ -40,7 +41,7 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
   }
 
   a {
-    color: ${({ theme }) => theme.colors.white};
+    color: ${({ theme }) => theme.colors.paragraph};
     text-decoration: none;
   }
 `;
