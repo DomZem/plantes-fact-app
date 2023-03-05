@@ -11,6 +11,13 @@ export const Wrapper = styled.div`
 	padding: 1.5rem;
 
 	text-align: center;
+
+	@media (min-width: 768px) {
+		grid-column: 1/2;
+		grid-row: 2/3;
+
+		text-align: left;
+	}
 `;
 
 export const StyledTitle = styled.h2`

@@ -1,17 +1,6 @@
 import { BorderBottomHover } from 'components/atoms/BorderBottomHover/BorderBottomHover';
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-	max-width: 1110px;
-
-	padding-top: 5.5rem; // The same value as StyledMobileSwitchWrapper height
-
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: repeat(2, 35rem);
-	gap: 2rem;
-`;
-
 export const StyledMobileSwitchWrapper = styled.div`
 	position: fixed;
 	top: 7rem; // The same value as height of Header
@@ -20,7 +9,7 @@ export const StyledMobileSwitchWrapper = styled.div`
 
 	display: flex;
 	justify-content: space-between;
-	gap: 1rem;
+	gap: 1.5rem;
 
 	padding: 0 1.5rem;
 	border-bottom: 1px solid ${({ theme }) => theme.colors.border};
@@ -49,4 +38,31 @@ export const StyledImage = styled.img<{ id: string }>`
 
 	align-self: center;
 	justify-self: center;
+
+	@media (min-width: 768px) {
+		grid-column: 1/-1;
+		grid-row: 1/2;
+	}
+`;
+
+export const Wrapper = styled.div`
+	max-width: 1110px;
+	padding-top: 5.5rem; // The same value as StyledMobileSwitchWrapper height
+
+	display: grid;
+
+	height: calc(100vh - 12.5rem);
+
+	grid-template-columns: 1fr;
+	grid-auto-rows: minmax(50%, 1fr) auto auto;
+	gap: 2rem;
+
+	@media (min-width: 768px) {
+		padding: 0;
+
+		height: calc(100vh - 16rem);
+
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: minmax(35%, 1fr) auto auto;
+	}
 `;

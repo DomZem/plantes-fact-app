@@ -1,7 +1,6 @@
 import PlanetStatisticsListItem from 'components/atoms/PlanetStatisticsListItem/PlanetStatisticsListItem';
 import { FC } from 'react';
-import styled from 'styled-components';
-
+import { Wrapper } from './PlanetStatisticsList.styles';
 type PlanetStatisticsListProps = {
 	statistics: {
 		title: string;
@@ -16,13 +15,5 @@ const PlanetStatisticsList: FC<PlanetStatisticsListProps> = ({ statistics }) => 
 		))}
 	</Wrapper>
 );
-
-export const Wrapper = styled.ul`
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-
-	padding: 1.5rem;
-`;
 
 export default PlanetStatisticsList;
