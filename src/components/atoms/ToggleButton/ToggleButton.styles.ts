@@ -19,6 +19,8 @@ export const Wrapper = styled.button<{ isOpen: boolean }>`
 
 	background-color: transparent;
 
+	cursor: pointer;
+
 	& > ${StyledLine} {
 		transition-duration: 0.3s;
 		transition-property: opacity, transform;

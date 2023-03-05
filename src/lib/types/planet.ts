@@ -1,17 +1,8 @@
 export type planetType = {
 	name: string;
-	overview: {
-		content: string;
-		source: string;
-	};
-	structure: {
-		content: string;
-		source: string;
-	};
-	geology: {
-		content: string;
-		source: string;
-	};
+	overview: contentType;
+	structure: contentType;
+	geology: contentType;
 	statistics: {
 		title: string;
 		value: string;
@@ -22,3 +13,10 @@ export type planetType = {
 		geology: string;
 	};
 };
+
+export type contentType = {
+	content: string;
+	source: string;
+};
+
+export type contentNamesType = ['overview', 'structure', 'geology'];
