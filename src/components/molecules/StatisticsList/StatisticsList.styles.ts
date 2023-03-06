@@ -13,4 +13,8 @@ export const Wrapper = styled.ul`
 		grid-column: 1/-1;
 		grid-row: 3/4;
 	}
+
+	@media (min-width: 1024px) {
+		grid-row: 4/5;
+	}
 `;

@@ -18,29 +18,27 @@ export const StyledLink = styled(NavLink)<{ name: string }>`
 	letter-spacing: 1px;
 	text-transform: uppercase;
 
-	@media (min-width: 1024px) {
-		opacity: 0.75;
-		transition: opacity 0.2s ease-in;
+	opacity: 0.75;
+	transition: opacity 0.2s ease-in;
 
-		&::before {
-			content: '';
+	&::before {
+		content: '';
 
-			position: absolute;
-			bottom: 0;
-			width: 0;
-			height: 3px;
+		position: absolute;
+		bottom: 0;
+		width: 0;
+		height: 3px;
 
-			background-color: ${({ theme, name }) => theme.colors[name]};
+		background-color: ${({ theme, name }) => theme.colors[name]};
 
-			transition: width 0.2s ease-in;
-		}
+		transition: width 0.2s ease-in;
+	}
 
-		&:hover {
-			opacity: 1;
-		}
+	&:hover::before {
+		width: 100%;
+	}
 
-		&:hover::before {
-			width: 100%;
-		}
+	&.active::before {
+		width: 100%;
 	}
 `;

@@ -1,15 +1,15 @@
 import SourceLink from 'components/atoms/SourceLink/SourceLink';
 import { FC } from 'react';
-import { StyledTitle, Wrapper } from './PlanetDescription.styles';
+import { StyledTitle, Wrapper } from './Description.styles';
 
-type PlanetDescriptionProps = {
+type DescriptionProps = {
 	title: string;
 	content: string;
 	handleHref: string;
 	handleSourceName: string;
 };
 
-const PlanetDescription: FC<PlanetDescriptionProps> = ({ title, content, handleHref, handleSourceName }) => (
+const Description: FC<DescriptionProps> = ({ title, content, handleHref, handleSourceName }) => (
 	<Wrapper>
 		<StyledTitle>{title}</StyledTitle>
 		<p>{content}</p>
@@ -17,4 +17,4 @@ const PlanetDescription: FC<PlanetDescriptionProps> = ({ title, content, handleH
 	</Wrapper>
 );
 
-export default PlanetDescription;
+export default Description;
