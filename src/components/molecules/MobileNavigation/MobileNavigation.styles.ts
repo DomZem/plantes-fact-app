@@ -23,7 +23,7 @@ export const Wrapper = styled.nav<{ isOpen: boolean }>`
 
 	padding: 1.5rem;
 
-	background-color: ${({ theme }) => theme.colors.background};
+	background-color: ${({ theme }) => theme.colors.federalBlue};
 	z-index: 900;
 
 	transition-property: display, transform;
@@ -33,14 +33,15 @@ export const Wrapper = styled.nav<{ isOpen: boolean }>`
 `;
 
 export const StyledName = styled.p`
-	font-weight: bold;
 	font-size: 1.5rem;
+	font-weight: bold;
 
 	text-transform: uppercase;
 	letter-spacing: 2px;
 
-	color: ${({ theme }) => theme.colors.white};
-	opacity: 0.5;
+	transition: color 0.2s ease-in-out;
+
+	color: ${({ theme }) => theme.colors.slightGrey};
 `;
 
 export const StyledIcon = styled.div<{ name: string }>`
@@ -61,7 +62,7 @@ export const StyledLink = styled(NavLink)`
 	gap: 2rem;
 
 	& + & {
-		border-top: 1px solid ${({ theme }) => theme.colors.border};
+		border-top: 1px solid ${({ theme }) => theme.colors.slightGrey};
 	}
 
 	svg {
@@ -70,18 +71,19 @@ export const StyledLink = styled(NavLink)`
 
 		margin-left: auto;
 
-		opacity: 0.5;
-		fill: ${({ theme }) => theme.colors.white};
+		fill: ${({ theme }) => theme.colors.slightGrey};
+
+		transition: fill 0.2s ease-in-out;
 	}
 
 	// Style for active link
 	&.active {
 		${StyledName} {
-			opacity: 1;
+			color: ${({ theme }) => theme.colors.white};
 		}
 
 		svg {
-			opacity: 1;
+			fill: ${({ theme }) => theme.colors.white};
 		}
 	}
 `;

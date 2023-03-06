@@ -11,9 +11,9 @@ export const Wrapper = styled.header`
 	align-items: center;
 
 	padding: 1.5rem;
-	border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+	border-bottom: 1px solid ${({ theme }) => theme.colors.lightGrey};
 
-	background-color: ${({ theme }) => theme.colors.background};
+	background-color: ${({ theme }) => theme.colors.federalBlue};
 
 	z-index: 900;
 
@@ -23,9 +23,7 @@ export const Wrapper = styled.header`
 		flex-direction: column;
 		justify-content: space-around;
 
-		nav a {
-			padding: 1rem;
-		}
+		padding-bottom: 0;
 	}
 
 	@media (min-width: 1024px) {
@@ -35,21 +33,17 @@ export const Wrapper = styled.header`
 		justify-content: space-between;
 
 		padding: 0 2.5rem;
-
-		nav {
-			height: 100%;
-			flex-basis: 50%;
-
-			a {
-				height: 100%;
-				padding: 0;
-			}
-		}
 	}
 `;
 
 export const StyledTitle = styled.h1`
 	font-size: 2.8rem;
-	text-transform: uppercase;
-	letter-spacing: 1px;
+
+	@media (min-width: 768px) {
+		margin-top: 0.75em;
+	}
+
+	@media (min-width: 1024px) {
+		margin-top: 0;
+	}
 `;

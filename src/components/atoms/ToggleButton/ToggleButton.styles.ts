@@ -22,7 +22,7 @@ export const Wrapper = styled.button<{ isOpen: boolean }>`
 	cursor: pointer;
 
 	& > ${StyledLine} {
-		transition-duration: 0.3s;
+		transition-duration: 0.25s;
 		transition-property: opacity, transform;
 		transition-timing-function: ease-in-out;
 	}

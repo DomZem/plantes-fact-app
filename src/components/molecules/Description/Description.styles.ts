@@ -8,8 +8,6 @@ export const Wrapper = styled.div`
 	flex-direction: column;
 	gap: 2rem;
 
-	padding: 1.5rem;
-
 	text-align: center;
 
 	@media (min-width: 768px) {
@@ -21,14 +19,12 @@ export const Wrapper = styled.div`
 
 	@media (min-width: 1024px) {
 		grid-column: 2/3;
-		grid-auto-flow: 2/3;
+		grid-row: 1/2;
 	}
 `;
 
 export const StyledTitle = styled.h2`
 	font-size: 4rem;
-	letter-spacing: 1px;
-	text-transform: uppercase;
 
 	@media (min-width: 768px) {
 		font-size: 4.8rem;

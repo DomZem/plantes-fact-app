@@ -4,6 +4,7 @@ export const Main = styled.main`
 	display: flex;
 	justify-content: center;
 
+	padding: 1.5rem;
 	padding-top: 7rem; // The same value as header height
 
 	@media (min-width: 768px) {

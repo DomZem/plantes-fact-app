@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+	font-size: 1.7rem;
+`;
 
 export const StyledLink = styled.a`
 	display: inline-flex;
@@ -9,5 +11,6 @@ export const StyledLink = styled.a`
 
 	margin-left: 1rem;
 
+	font-weight: bold;
 	text-decoration: underline;
 `;

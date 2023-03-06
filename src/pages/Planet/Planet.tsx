@@ -24,9 +24,9 @@ const Planet = () => {
 			{planet && (
 				<>
 					{isBreakpoint ? (
-						<MobileSwitchContentButtons handleName={planet.name} handleSetContentName={handleSetContentName} />
+						<MobileSwitchContentButtons handleName={planet.name} contentName={contentName} handleSetContentName={handleSetContentName} />
 					) : (
-						<DesktopSwitchContentButtons handleName={planet.name} handleSetContentName={handleSetContentName} />
+						<DesktopSwitchContentButtons handleName={planet.name} contentName={contentName} handleSetContentName={handleSetContentName} />
 					)}
 					<StyledImage id={planet.name} src={planet.images.planet} alt={planet.name} />
 					<Description title={planet.name} content={planet[contentName].content} handleHref={planet[contentName].source} handleSourceName='Wikipedia' />

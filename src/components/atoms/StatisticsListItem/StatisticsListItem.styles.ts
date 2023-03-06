@@ -14,11 +14,26 @@ export const Wrapper = styled(ViewWrapper)`
 	}
 `;
 
-export const StyledTitle = styled.p`
+export const StyledTitle = styled.h3`
 	font-size: 1.3rem;
+	font-weight: normal;
+	letter-spacing: 1px;
+
+	@media (min-width: 1024px) {
+		font-size: 1.6rem;
+	}
 `;
 
-export const StyleValue = styled.h3`
+export const StyleValue = styled.p`
 	font-size: 2.5rem;
-	font-weight: 400;
+	font-family: ${({ theme }) => theme.fonts.antonio};
+	color: ${({ theme }) => theme.colors.white};
+
+	@media (min-width: 768px) {
+		font-size: 2.9rem;
+	}
+
+	@media (min-width: 1024px) {
+		font-size: 3.5rem;
+	}
 `;

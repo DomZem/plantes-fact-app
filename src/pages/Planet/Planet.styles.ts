@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
 	max-width: 1110px;
-	padding-top: 5.5rem; // The same value as StyledMobileSwitchWrapper height
+	padding-top: 5.5rem; // The same value as MobileSwitchContentButtons height
 
 	display: grid;
 
@@ -22,15 +22,16 @@ export const Wrapper = styled.div`
 	}
 
 	@media (min-width: 1024px) {
-		height: calc(100vh - 8.5rem);
+		padding-top: 5.5rem;
+		height: calc(100vh - 10.5rem);
 
 		grid-template-columns: 65% 1fr;
-		grid-template-rows: 10% minmax(20%, 1fr) minmax(10%, 1fr) auto;
+		grid-template-rows: minmax(auto, 1fr) minmax(10%, 1fr) auto;
 	}
 `;
 
 export const StyledImage = styled.img<{ id: string }>`
-	max-height: ${({ theme, id }) => theme.planetsMaxWidth.mobile[id.toLowerCase()]};
+	max-height: ${({ theme, id }) => theme.planetsMaxWidth[id.toLowerCase()]};
 	// Every planet have different max-height because that mirrors its size in the solar system
 
 	align-self: center;
@@ -43,6 +44,6 @@ export const StyledImage = styled.img<{ id: string }>`
 
 	@media (min-width: 1024px) {
 		grid-column: 1/2;
-		grid-row: 2/4;
+		grid-row: 1/3;
 	}
 `;

@@ -2,10 +2,19 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const Wrapper = styled.nav`
+	width: 100%;
+
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 1.5rem;
+
+	margin-top: auto;
+
+	@media (min-width: 1024px) {
+		height: 100%;
+		flex-basis: 50%;
+	}
 `;
 
 export const StyledLink = styled(NavLink)<{ name: string }>`
@@ -14,12 +23,13 @@ export const StyledLink = styled(NavLink)<{ name: string }>`
 	display: flex;
 	align-items: center;
 
+	padding: 1.5em 0;
+
 	font-weight: bold;
-	letter-spacing: 1px;
+	letter-spacing: 2px;
 	text-transform: uppercase;
 
-	opacity: 0.75;
-	transition: opacity 0.2s ease-in;
+	transition: color 0.25s ease-in-out;
 
 	&::before {
 		content: '';
@@ -31,7 +41,15 @@ export const StyledLink = styled(NavLink)<{ name: string }>`
 
 		background-color: ${({ theme, name }) => theme.colors[name]};
 
-		transition: width 0.2s ease-in;
+		transition: width 0.25s ease-in-out;
+	}
+
+	&:hover {
+		color: ${({ theme }) => theme.colors.white};
+	}
+
+	&.active {
+		color: ${({ theme }) => theme.colors.white};
 	}
 
 	&:hover::before {
@@ -40,5 +58,9 @@ export const StyledLink = styled(NavLink)<{ name: string }>`
 
 	&.active::before {
 		width: 100%;
+	}
+
+	@media (min-width: 1024px) {
+		height: 100%;
 	}
 `;

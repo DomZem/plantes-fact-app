@@ -5,8 +5,6 @@ export const Wrapper = styled.ul`
 	grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
 	gap: 2rem;
 
-	padding: 1.5rem;
-
 	@media (min-width: 768px) {
 		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 
@@ -15,6 +13,6 @@ export const Wrapper = styled.ul`
 	}
 
 	@media (min-width: 1024px) {
-		grid-row: 4/5;
+		grid-row: 3/4;
 	}
 `;

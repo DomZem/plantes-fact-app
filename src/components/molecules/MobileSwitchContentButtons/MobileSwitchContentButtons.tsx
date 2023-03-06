@@ -6,12 +6,13 @@ import { StyledButton, Wrapper } from './MobileSwitchContentButtons.styles';
 type MobileSwitchContentButtonsProps = {
 	handleName: string;
 	handleSetContentName: (contentName: contentNamesType[number]) => void;
+	contentName: contentNamesType[number];
 };
 
-const MobileSwitchContentButtons: FC<MobileSwitchContentButtonsProps> = ({ handleName, handleSetContentName }) => (
+const MobileSwitchContentButtons: FC<MobileSwitchContentButtonsProps> = ({ handleName, handleSetContentName, contentName }) => (
 	<Wrapper>
 		{planetContents.map((planetContent) => (
-			<StyledButton name={handleName} onClick={() => handleSetContentName(planetContent)} key={planetContent}>
+			<StyledButton isActive={contentName === planetContent} name={handleName} onClick={() => handleSetContentName(planetContent)} key={planetContent}>
 				{planetContent}
 			</StyledButton>
 		))}

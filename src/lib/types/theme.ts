@@ -1,10 +1,12 @@
 export type themeType = {
 	colors: {
-		background: string;
-		paragraph: string;
-		border: string;
+		// primary colors
+		federalBlue: string;
+		slightGrey: string;
 		white: string;
 		darkGrey: string;
+
+		// planets
 		mercury: string;
 		venus: string;
 		earth: string;
@@ -19,15 +21,13 @@ export type themeType = {
 		spartan: string;
 	};
 	planetsMaxWidth: {
-		mobile: {
-			mercury: string;
-			venus: string;
-			earth: string;
-			mars: string;
-			jupiter: string;
-			saturn: string;
-			uranus: string;
-			neptune: string;
-		};
+		mercury: string;
+		venus: string;
+		earth: string;
+		mars: string;
+		jupiter: string;
+		saturn: string;
+		uranus: string;
+		neptune: string;
 	};
 };

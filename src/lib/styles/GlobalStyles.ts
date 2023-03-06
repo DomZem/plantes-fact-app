@@ -15,21 +15,27 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
 
   body {
 	  background-image: url('assets/background-stars.svg');
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${({ theme }) => theme.colors.federalBlue};
     
     font-size: 1.6rem;
     font-family: ${({ theme }) => theme.fonts.spartan};
-    color: ${({ theme }) => theme.colors.paragraph};
+    color: ${({ theme }) => theme.colors.slightGrey};
+
+    @media (min-width: 1024px) {
+      font-size: 1.7rem;
+    }
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1, h2 {
     font-family: ${({ theme }) => theme.fonts.antonio};
     color: ${({ theme }) => theme.colors.white};
+    text-transform: uppercase;
+	  letter-spacing: 2px;
   }
 
   button {
     font-family: ${({ theme }) => theme.fonts.spartan};
-    color: ${({ theme }) => theme.colors.paragraph};
+    color: ${({ theme }) => theme.colors.slightGrey};
   }
 
   p {
@@ -41,7 +47,7 @@ export const GlobalStyle = createGlobalStyle<{ theme: themeType }>`
   }
 
   a {
-    color: ${({ theme }) => theme.colors.paragraph};
+    color: ${({ theme }) => theme.colors.slightGrey};
     text-decoration: none;
   }
 `;
