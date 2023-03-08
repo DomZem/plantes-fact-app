@@ -5,15 +5,15 @@ import { StyledTitle, Wrapper } from './Description.styles';
 type DescriptionProps = {
 	title: string;
 	content: string;
-	handleHref: string;
-	handleSourceName: string;
+	href: string;
+	sourceName: string;
 };
 
-const Description: FC<DescriptionProps> = ({ title, content, handleHref, handleSourceName }) => (
+const Description: FC<DescriptionProps> = ({ title, content, href, sourceName }) => (
 	<Wrapper>
 		<StyledTitle>{title}</StyledTitle>
 		<p>{content}</p>
-		<SourceLink href={handleHref} sourceName={handleSourceName} />
+		<SourceLink href={href} sourceName={sourceName} />
 	</Wrapper>
 );
 

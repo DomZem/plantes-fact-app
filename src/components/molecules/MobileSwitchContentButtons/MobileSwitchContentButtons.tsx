@@ -1,18 +1,18 @@
-import { contentNamesType } from 'lib/types/planet';
+import { contentType } from 'lib/types/planet';
 import { planetContents } from 'pages/Planet/Planet';
 import { FC } from 'react';
 import { StyledButton, Wrapper } from './MobileSwitchContentButtons.styles';
 
 type MobileSwitchContentButtonsProps = {
-	handleName: string;
-	handleSetContentName: (contentName: contentNamesType[number]) => void;
-	contentName: contentNamesType[number];
+	name: string;
+	handleSetContent: (content: contentType[number]) => void;
+	content: contentType[number];
 };
 
-const MobileSwitchContentButtons: FC<MobileSwitchContentButtonsProps> = ({ handleName, handleSetContentName, contentName }) => (
+const MobileSwitchContentButtons: FC<MobileSwitchContentButtonsProps> = ({ name, handleSetContent, content }) => (
 	<Wrapper>
 		{planetContents.map((planetContent) => (
-			<StyledButton isActive={contentName === planetContent} name={handleName} onClick={() => handleSetContentName(planetContent)} key={planetContent}>
+			<StyledButton isActive={content === planetContent} name={name} onClick={() => handleSetContent(planetContent)} key={planetContent}>
 				{planetContent}
 			</StyledButton>
 		))}

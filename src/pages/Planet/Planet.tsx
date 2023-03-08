@@ -4,19 +4,19 @@ import MobileSwitchContentButtons from 'components/molecules/MobileSwitchContent
 import StatisticsList from 'components/molecules/StatisticsList/StatisticsList';
 import { useMediaQuery } from 'hooks/useMediaQuery';
 import { usePlanet } from 'hooks/usePlanet';
-import { contentNamesType } from 'lib/types/planet';
+import { contentType } from 'lib/types/planet';
 import { useState } from 'react';
 import { StyledImage, Wrapper } from './Planet.styles';
 
-export const planetContents: contentNamesType = ['overview', 'structure', 'geology'];
+export const planetContents: contentType = ['overview', 'structure', 'geology'];
 
 const Planet = () => {
 	const { planet } = usePlanet();
-	const [contentName, setContentName] = useState<contentNamesType[number]>('overview');
+	const [content, setContent] = useState<contentType[number]>('overview');
 	const isBreakpoint = useMediaQuery(767);
 
-	const handleSetContentName = (contentName: contentNamesType[number]) => {
-		setContentName(contentName);
+	const handleSetContent = (content: contentType[number]) => {
+		setContent(content);
 	};
 
 	return (
@@ -24,12 +24,12 @@ const Planet = () => {
 			{planet && (
 				<>
 					{isBreakpoint ? (
-						<MobileSwitchContentButtons handleName={planet.name} contentName={contentName} handleSetContentName={handleSetContentName} />
+						<MobileSwitchContentButtons name={planet.name} content={content} handleSetContent={handleSetContent} />
 					) : (
-						<DesktopSwitchContentButtons handleName={planet.name} contentName={contentName} handleSetContentName={handleSetContentName} />
+						<DesktopSwitchContentButtons name={planet.name} content={content} handleSetContent={handleSetContent} />
 					)}
 					<StyledImage id={planet.name} src={planet.images.planet} alt={planet.name} />
-					<Description title={planet.name} content={planet[contentName].content} handleHref={planet[contentName].source} handleSourceName='Wikipedia' />
+					<Description title={planet.name} content={planet[content].content} href={planet[content].source} sourceName='Wikipedia' />
 					<StatisticsList statistics={planet.statistics} />
 				</>
 			)}
