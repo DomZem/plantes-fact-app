@@ -9,7 +9,7 @@ const closeNav = css`
 	transform: translateX(-100%);
 `;
 
-export const Wrapper = styled.nav<{ isOpen: boolean }>`
+export const Wrapper = styled.nav<{ isMenuOpen: boolean }>`
 	position: fixed;
 	top: 7rem; // The same value as header height
 	bottom: 0;
@@ -29,7 +29,7 @@ export const Wrapper = styled.nav<{ isOpen: boolean }>`
 	transition-property: display, transform;
 	transition-duration: 300ms;
 	transition-timing-function: ease-in-out;
-	${({ isOpen }) => (isOpen ? openNav : closeNav)}
+	${({ isMenuOpen }) => (isMenuOpen ? openNav : closeNav)}
 `;
 
 export const StyledName = styled.p`

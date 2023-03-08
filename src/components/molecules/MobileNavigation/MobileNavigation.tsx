@@ -5,16 +5,16 @@ import { useState } from 'react';
 import { StyledIcon, StyledLink, StyledName, Wrapper } from './MobileNavigation.styles';
 
 const MobileNavigation = () => {
-	const [showMenu, setShowMenu] = useState(false);
+	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const handleToggleMenu = () => {
-		setShowMenu(!showMenu);
+		setIsMenuOpen((prevState) => !prevState);
 	};
 
 	return (
 		<>
-			<ToggleButton isOpen={showMenu} handleToggle={handleToggleMenu} />
-			<Wrapper isOpen={showMenu}>
+			<ToggleButton isOpen={isMenuOpen} handleToggle={handleToggleMenu} />
+			<Wrapper isMenuOpen={isMenuOpen}>
 				{planets.map(({ name }) => {
 					return (
 						<StyledLink key={name} to={`/${name.toLowerCase()}`}>
