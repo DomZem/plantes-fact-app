@@ -1,3 +1,4 @@
+import { BottomBorder } from 'components/atoms/BottomBorder/BottomBorder';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
@@ -19,9 +20,7 @@ export const Wrapper = styled.div`
 	z-index: 800;
 `;
 
-export const StyledButton = styled.button<{ name: string; isActive: boolean }>`
-	position: relative;
-
+export const StyledButton = styled(BottomBorder)<{ name: string; isActive: boolean }>`
 	border: none;
 
 	background-color: transparent;
@@ -32,19 +31,10 @@ export const StyledButton = styled.button<{ name: string; isActive: boolean }>`
 	letter-spacing: 1px;
 	text-transform: uppercase;
 
-	transition: color 0.2s ease-in-out;
+	transition: color 0.25s ease-in-out;
 	cursor: pointer;
 
 	&::before {
-		content: '';
-
-		position: absolute;
-		bottom: 0;
-		width: ${({ isActive }) => isActive && '100%'};
-		height: 3px;
-
-		background-color: ${({ theme, name }) => theme.colors[name.toLowerCase()]};
-
-		transition: width 0.2s ease-in-out;
+		width: ${({ isActive }) => (isActive ? '100%' : '0')};
 	}
 `;

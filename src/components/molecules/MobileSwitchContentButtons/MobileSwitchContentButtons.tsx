@@ -12,7 +12,7 @@ type MobileSwitchContentButtonsProps = {
 const MobileSwitchContentButtons: FC<MobileSwitchContentButtonsProps> = ({ name, handleSetContent, content }) => (
 	<Wrapper>
 		{planetContents.map((planetContent) => (
-			<StyledButton isActive={content === planetContent} name={name} onClick={() => handleSetContent(planetContent)} key={planetContent}>
+			<StyledButton as='button' isActive={content === planetContent} name={name} onClick={() => handleSetContent(planetContent)} key={planetContent}>
 				{planetContent}
 			</StyledButton>
 		))}

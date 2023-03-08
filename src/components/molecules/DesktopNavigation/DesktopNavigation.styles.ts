@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { BottomBorder } from 'components/atoms/BottomBorder/BottomBorder';
 import styled from 'styled-components';
 
 export const Wrapper = styled.nav`
@@ -17,9 +17,7 @@ export const Wrapper = styled.nav`
 	}
 `;
 
-export const StyledLink = styled(NavLink)<{ name: string }>`
-	position: relative;
-
+export const StyledLink = styled(BottomBorder)<{ name: string }>`
 	display: flex;
 	align-items: center;
 
@@ -32,16 +30,7 @@ export const StyledLink = styled(NavLink)<{ name: string }>`
 	transition: color 0.25s ease-in-out;
 
 	&::before {
-		content: '';
-
-		position: absolute;
-		bottom: 0;
 		width: 0;
-		height: 3px;
-
-		background-color: ${({ theme, name }) => theme.colors[name]};
-
-		transition: width 0.25s ease-in-out;
 	}
 
 	&:hover {
