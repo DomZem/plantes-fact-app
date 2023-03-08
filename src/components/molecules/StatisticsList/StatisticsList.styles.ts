@@ -13,6 +13,6 @@ export const Wrapper = styled.ul`
 	}
 
 	@media (min-width: 1024px) {
-		grid-row: 3/4;
+		grid-row: 4/5;
 	}
 `;

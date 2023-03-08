@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
 
 	@media (min-width: 1024px) {
 		grid-column: 2/3;
-		grid-row: 1/2;
+		grid-row: 2/3;
 	}
 `;
 

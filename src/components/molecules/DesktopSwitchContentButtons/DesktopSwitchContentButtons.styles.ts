@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
 	@media (min-width: 1024px) {
 		justify-content: flex-start;
 		grid-column: 2/3;
-		grid-row: 2/3;
+		grid-row: 3/4;
 	}
 `;
 
