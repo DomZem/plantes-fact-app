@@ -13,7 +13,7 @@ const MobileNavigation = () => {
 
 	return (
 		<>
-			<ToggleButton isOpen={isMenuOpen} handleToggle={handleToggleMenu} />
+			<ToggleButton isOpen={isMenuOpen} onClick={handleToggleMenu} />
 			<Wrapper isMenuOpen={isMenuOpen}>
 				{planets.map(({ name }) => {
 					return (

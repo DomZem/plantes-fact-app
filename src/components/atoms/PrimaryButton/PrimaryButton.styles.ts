@@ -1,23 +1,7 @@
-import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import styled from 'styled-components';
+import { ViewWrapper } from '../ViewWrapper/ViewWrapper';
 
-export const Wrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	gap: 2rem;
-
-	grid-column: 2/3;
-	grid-row: 2/3;
-
-	@media (min-width: 1024px) {
-		justify-content: flex-start;
-		grid-column: 2/3;
-		grid-row: 3/4;
-	}
-`;
-
-export const StyledButton = styled(ViewWrapper)<{ name: string; isActive: boolean }>`
+export const Wrapper = styled(ViewWrapper)<{ name: string; isActive: boolean }>`
 	background-color: ${({ theme }) => theme.colors.federalBlue};
 
 	font-size: 1.4rem;
