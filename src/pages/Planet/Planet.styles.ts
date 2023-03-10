@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
 		height: calc(100vh - 17.5rem);
 
 		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: minmax(46.2rem, 1fr) auto auto;
+		grid-template-rows: minmax(45rem, 1fr) auto auto;
 	}
 
 	@media (min-width: 1024px) {
@@ -29,14 +29,12 @@ export const Wrapper = styled.div`
 	}
 `;
 
-export const StyledImage = styled.img<{ id: string }>`
-	max-height: ${({ theme, id }) => theme.planetsMaxWidth[id.toLowerCase()]};
-	// Every planet have different max-height because that mirrors its size in the solar system
+export const StyledImageWrapper = styled.div`
+	position: relative;
 
-	max-width: 100%;
-
-	align-self: center;
-	justify-self: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 
 	@media (min-width: 768px) {
 		grid-column: 1/-1;
@@ -47,4 +45,20 @@ export const StyledImage = styled.img<{ id: string }>`
 		grid-column: 1/2;
 		grid-row: 2/4;
 	}
+`;
+
+export const StyledImage = styled.img<{ name: string }>`
+	max-height: ${({ theme, name }) => theme.planetsMaxSize[name.toLowerCase()]};
+	max-width: ${({ theme, name }) => theme.planetsMaxSize[name.toLowerCase()]};
+`;
+
+export const StyledGeologyImage = styled.img`
+	position: absolute;
+	left: 50%;
+	top: 58%;
+
+	max-width: 15%;
+	transform: translateX(-50%);
+
+	z-index: 100;
 `;

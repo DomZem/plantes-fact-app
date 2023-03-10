@@ -20,7 +20,7 @@ export type themeType = {
 		antonio: string;
 		spartan: string;
 	};
-	planetsMaxWidth: {
+	planetsMaxSize: {
 		mercury: string;
 		venus: string;
 		earth: string;

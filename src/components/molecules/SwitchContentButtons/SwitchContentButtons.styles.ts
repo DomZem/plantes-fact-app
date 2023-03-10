@@ -21,6 +21,8 @@ export const Wrapper = styled.div`
 	@media (min-width: 768px) {
 		position: static;
 
+		height: auto;
+
 		flex-direction: column;
 		justify-content: center;
 		gap: 2rem;

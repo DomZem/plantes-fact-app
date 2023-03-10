@@ -22,8 +22,8 @@ export const theme: themeType = {
 		antonio: 'Antonio, sans-serif',
 	},
 
-	// Every planet have different max-height because that mirrors its size in the solar system
-	planetsMaxWidth: {
+	// Every planet have different max size because that mirrors its size in the solar system
+	planetsMaxSize: {
 		mercury: '32%',
 		venus: '45%',
 		earth: '50%',

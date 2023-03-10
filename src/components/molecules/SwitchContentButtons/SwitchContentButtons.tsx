@@ -42,7 +42,7 @@ const SwitchContentButtons: FC<SwitchContentButtonsProps> = ({ name, content, ha
 						{value}
 					</SecondaryButton>
 				) : (
-					<PrimaryButton isActive={content === value} name={name} onClick={() => handleSetContent(value)} key={value} spanText={`0${index + 1}`}>
+					<PrimaryButton isActive={content === value} name={name} onClick={() => handleSetContent(value)} spanText={`0${index + 1}`} key={value}>
 						{text}
 					</PrimaryButton>
 				)

@@ -4,7 +4,7 @@ import SwitchContentButtons from 'components/molecules/SwitchContentButtons/Swit
 import { usePlanet } from 'hooks/usePlanet';
 import { contentType } from 'lib/types/planet';
 import { useState } from 'react';
-import { StyledImage, Wrapper } from './Planet.styles';
+import { StyledGeologyImage, StyledImage, StyledImageWrapper, Wrapper } from './Planet.styles';
 
 const Planet = () => {
 	const { planet } = usePlanet();
@@ -19,7 +19,10 @@ const Planet = () => {
 			{planet && (
 				<>
 					<SwitchContentButtons name={planet.name} content={content} handleSetContent={handleSetContent} />
-					<StyledImage id={planet.name} src={planet.images.planet} alt={planet.name} />
+					<StyledImageWrapper>
+						<StyledImage name={planet.name} src={content === 'structure' ? planet.images.internal : planet.images.planet} />
+						{content === 'geology' && <StyledGeologyImage src={planet.images.geology} />}
+					</StyledImageWrapper>
 					<Description title={planet.name} content={planet[content].content} href={planet[content].source} sourceName='Wikipedia' />
 					<StatisticsList statistics={planet.statistics} />
 				</>
