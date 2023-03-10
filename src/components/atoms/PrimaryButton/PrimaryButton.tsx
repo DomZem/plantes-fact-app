@@ -6,10 +6,12 @@ type PrimaryButtonProps = {
 	isActive: boolean;
 	children: React.ReactNode;
 	onClick: () => void;
+	spanText?: string;
 };
 
-const PrimaryButton: FC<PrimaryButtonProps> = ({ name, isActive, onClick, children }) => (
+const PrimaryButton: FC<PrimaryButtonProps> = ({ name, isActive, onClick, children, spanText }) => (
 	<Wrapper as='button' name={name} isActive={isActive} onClick={onClick}>
+		{spanText && <span>{spanText}</span>}
 		{children}
 	</Wrapper>
 );

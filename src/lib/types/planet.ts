@@ -23,4 +23,4 @@ export type planetType = {
 	};
 };
 
-export type contentType = ['overview', 'structure', 'geology'];
+export type contentType = 'overview' | 'structure' | 'geology';

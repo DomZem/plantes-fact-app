@@ -7,42 +7,45 @@ import { Wrapper } from './SwitchContentButtons.styles';
 
 type SwitchContentButtonsProps = {
 	name: string;
-	content: contentType[number];
-	handleSetContent: (content: contentType[number]) => void;
+	content: contentType;
+	handleSetContent: (content: contentType) => void;
 };
+
+type contentsType = {
+	value: contentType;
+	text: string;
+};
+
+const contents: contentsType[] = [
+	{
+		value: 'overview',
+		text: 'overview',
+	},
+	{
+		value: 'structure',
+		text: 'internal structure',
+	},
+	{
+		value: 'geology',
+		text: 'surface geology',
+	},
+];
 
 const SwitchContentButtons: FC<SwitchContentButtonsProps> = ({ name, content, handleSetContent }) => {
 	const isBreakpoint = useMediaQuery(767);
 
 	return (
 		<Wrapper>
-			{isBreakpoint ? (
-				<>
-					<SecondaryButton isActive={content === 'overview'} name={name} onClick={() => handleSetContent('overview')}>
-						overview
+			{contents.map(({ value, text }, index) =>
+				isBreakpoint ? (
+					<SecondaryButton isActive={content === value} name={name} onClick={() => handleSetContent(value)} key={value}>
+						{value}
 					</SecondaryButton>
-					<SecondaryButton isActive={content === 'structure'} name={name} onClick={() => handleSetContent('structure')}>
-						structure
-					</SecondaryButton>
-					<SecondaryButton isActive={content === 'geology'} name={name} onClick={() => handleSetContent('geology')}>
-						geology
-					</SecondaryButton>
-				</>
-			) : (
-				<>
-					<PrimaryButton isActive={content === 'overview'} name={name} onClick={() => handleSetContent('overview')}>
-						<span>01</span>
-						overview
+				) : (
+					<PrimaryButton isActive={content === value} name={name} onClick={() => handleSetContent(value)} key={value} spanText={`0${index + 1}`}>
+						{text}
 					</PrimaryButton>
-					<PrimaryButton isActive={content === 'structure'} name={name} onClick={() => handleSetContent('structure')}>
-						<span>02</span>
-						internal structure
-					</PrimaryButton>
-					<PrimaryButton isActive={content === 'geology'} name={name} onClick={() => handleSetContent('geology')}>
-						<span>03</span>
-						surface geology
-					</PrimaryButton>
-				</>
+				)
 			)}
 		</Wrapper>
 	);

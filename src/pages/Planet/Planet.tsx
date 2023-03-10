@@ -6,13 +6,11 @@ import { contentType } from 'lib/types/planet';
 import { useState } from 'react';
 import { StyledImage, Wrapper } from './Planet.styles';
 
-export const planetContents: contentType = ['overview', 'structure', 'geology'];
-
 const Planet = () => {
 	const { planet } = usePlanet();
-	const [content, setContent] = useState<contentType[number]>('overview');
+	const [content, setContent] = useState<contentType>('overview');
 
-	const handleSetContent = (content: contentType[number]) => {
+	const handleSetContent = (content: contentType) => {
 		setContent(content);
 	};
 
