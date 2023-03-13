@@ -5,14 +5,14 @@ import { StyledLink, Wrapper } from './SourceLink.styles';
 type SourceLinkProps = {
 	text?: string;
 	sourceName: string;
-	href: string;
+	source: string;
 };
 
-const SourceLink: FC<SourceLinkProps> = ({ href, text = 'source', sourceName }) => {
+const SourceLink: FC<SourceLinkProps> = ({ source, text = 'source', sourceName }) => {
 	return (
 		<Wrapper>
 			{text}:
-			<StyledLink href={href} target='_blank' rel='noreferrer'>
+			<StyledLink href={source} target='_blank' rel='noreferrer'>
 				{sourceName}
 				<SourceIcon />
 			</StyledLink>

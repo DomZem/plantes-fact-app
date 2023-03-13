@@ -23,7 +23,7 @@ const Planet = () => {
 						<StyledImage name={planet.name} src={contentName === 'structure' ? planet.images.internal : planet.images.planet} />
 						{contentName === 'geology' && <StyledGeologyImage src={planet.images.geology} />}
 					</StyledImageWrapper>
-					<Description title={planet.name} content={planet[contentName].content} href={planet[contentName].source} sourceName='Wikipedia' />
+					<Description title={planet.name} content={planet[contentName].content} source={planet[contentName].source} sourceName='Wikipedia' />
 					<StatisticsList statistics={planet.statistics} />
 				</>
 			)}
