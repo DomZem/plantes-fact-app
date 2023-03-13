@@ -16,8 +16,8 @@ export const Wrapper = styled(ViewWrapper)<{ name: string; isActive: boolean }>`
 	cursor: pointer;
 
 	// Active button
-	border-color: ${({ theme, name, isActive }) => isActive && theme.colors[name.toLowerCase()]};
-	background-color: ${({ theme, name, isActive }) => isActive && theme.colors[name.toLowerCase()]};
+	border-color: ${({ theme, name, isActive }) => isActive && theme.colors[name]};
+	background-color: ${({ theme, name, isActive }) => isActive && theme.colors[name]};
 	color: ${({ theme, isActive }) => isActive && theme.colors.white};
 
 	span {

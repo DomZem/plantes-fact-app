@@ -13,7 +13,7 @@ export const usePlanet = () => {
 				searchPhrase: planetName,
 			})
 			.then(({ data: { planet } }) => {
-				setPlanet(planet);
+				setPlanet({ ...planet, name: planetName });
 			});
 	}, [planetName]);
 

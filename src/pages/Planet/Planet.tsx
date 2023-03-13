@@ -10,6 +10,8 @@ const Planet = () => {
 	const { planet } = usePlanet();
 	const [contentName, setContentName] = useState<contentNameType>('overview');
 
+	console.log(planet);
+
 	const handleSetContentName = (contentName: contentNameType) => {
 		setContentName(contentName);
 	};

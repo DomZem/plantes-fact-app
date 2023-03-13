@@ -11,7 +11,7 @@ export const BottomBorder = styled(NavLink)<{ name: string }>`
 		width: 100%;
 		height: 3px;
 
-		background-color: ${({ theme, name }) => theme.colors[name.toLowerCase()]};
+		background-color: ${({ theme, name }) => theme.colors[name]};
 
 		transition: width 0.25s ease-in-out;
 	}

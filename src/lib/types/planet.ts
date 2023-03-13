@@ -1,5 +1,5 @@
 export type planetType = {
-	name: string;
+	name: planetNameType;
 	overview: {
 		content: string;
 		source: string;
@@ -24,3 +24,5 @@ export type planetType = {
 };
 
 export type contentNameType = 'overview' | 'structure' | 'geology';
+
+export type planetNameType = 'mercury' | 'venus' | 'earth' | 'mars' | 'jupiter' | 'saturn' | 'uranus' | 'neptune';

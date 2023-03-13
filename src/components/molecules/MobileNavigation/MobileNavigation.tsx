@@ -1,6 +1,6 @@
 import ToggleButton from 'components/atoms/ToggleButton/ToggleButton';
+import { planets } from 'lib/constants';
 import { ReactComponent as RightArrowIcon } from 'lib/icons/icon-arrow-right.svg';
-import { planets } from 'mocks/fixtures';
 import { useState } from 'react';
 import { StyledIcon, StyledLink, StyledName, Wrapper } from './MobileNavigation.styles';
 
@@ -15,10 +15,10 @@ const MobileNavigation = () => {
 		<>
 			<ToggleButton isOpen={isMenuOpen} onClick={handleToggleMenu} />
 			<Wrapper isMenuOpen={isMenuOpen}>
-				{planets.map(({ name }) => {
+				{planets.map((name) => {
 					return (
-						<StyledLink key={name} to={`/${name.toLowerCase()}`}>
-							<StyledIcon name={name.toLocaleLowerCase()} />
+						<StyledLink key={name} to={`/${name}`}>
+							<StyledIcon name={name} />
 							<StyledName>{name}</StyledName>
 							<RightArrowIcon />
 						</StyledLink>

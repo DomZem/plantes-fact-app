@@ -48,8 +48,8 @@ export const StyledImageWrapper = styled.div`
 `;
 
 export const StyledImage = styled.img<{ name: string }>`
-	max-height: ${({ theme, name }) => theme.planetsMaxSize[name.toLowerCase()]};
-	max-width: ${({ theme, name }) => theme.planetsMaxSize[name.toLowerCase()]};
+	max-height: ${({ theme, name }) => theme.planetsMaxSize[name]};
+	max-width: ${({ theme, name }) => theme.planetsMaxSize[name]};
 `;
 
 export const StyledGeologyImage = styled.img`
