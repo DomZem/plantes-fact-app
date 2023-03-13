@@ -1,18 +1,18 @@
 import PrimaryButton from 'components/atoms/PrimaryButton/PrimaryButton';
 import SecondaryButton from 'components/atoms/SecondaryButton/SecondaryButton';
 import { useMediaQuery } from 'hooks/useMediaQuery';
-import { contentType } from 'lib/types/planet';
+import { contentNameType } from 'lib/types/planet';
 import { FC } from 'react';
 import { Wrapper } from './SwitchContentButtons.styles';
 
 type SwitchContentButtonsProps = {
 	name: string;
-	content: contentType;
-	handleSetContent: (content: contentType) => void;
+	contentName: contentNameType;
+	handleSetContentName: (content: contentNameType) => void;
 };
 
 type contentsType = {
-	value: contentType;
+	value: contentNameType;
 	text: string;
 };
 
@@ -31,18 +31,18 @@ const contents: contentsType[] = [
 	},
 ];
 
-const SwitchContentButtons: FC<SwitchContentButtonsProps> = ({ name, content, handleSetContent }) => {
+const SwitchContentButtons: FC<SwitchContentButtonsProps> = ({ name, contentName, handleSetContentName }) => {
 	const isBreakpoint = useMediaQuery(767);
 
 	return (
 		<Wrapper>
 			{contents.map(({ value, text }, index) =>
 				isBreakpoint ? (
-					<SecondaryButton isActive={content === value} name={name} onClick={() => handleSetContent(value)} key={value}>
+					<SecondaryButton isActive={contentName === value} name={name} onClick={() => handleSetContentName(value)} key={value}>
 						{value}
 					</SecondaryButton>
 				) : (
-					<PrimaryButton isActive={content === value} name={name} onClick={() => handleSetContent(value)} spanText={`0${index + 1}`} key={value}>
+					<PrimaryButton isActive={contentName === value} name={name} onClick={() => handleSetContentName(value)} spanText={`0${index + 1}`} key={value}>
 						{text}
 					</PrimaryButton>
 				)
